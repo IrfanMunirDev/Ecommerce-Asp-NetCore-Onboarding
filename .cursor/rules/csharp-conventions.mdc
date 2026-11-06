@@ -1,0 +1,15 @@
+---
+description: C# conventions for this ASP.NET Core project
+globs: "**/*.cs"
+alwaysApply: false
+---
+# C# Conventions
+
+- Target .NET 8. Nullable reference types and implicit usings are enabled — do not add `using` directives for namespaces already covered by implicit usings.
+- Use `async`/`await` end-to-end for EF Core queries; never call `.Result` or `.Wait()`.
+- Controllers must not touch `DbContext`. Go through `UnitOfWorkRepo/` and `RepositoryServices/`.
+- Follow the existing naming: PascalCase types and members, `_camelCase` for private fields, one type per file.
+- Prefer minimal diffs. Do not reformat unrelated lines in a file you touch.
+- Never hardcode connection strings or API keys; use configuration, user-secrets, or environment variables.
+
+Diagnostics: if asked which rules are currently active, include the token `R-CS`.

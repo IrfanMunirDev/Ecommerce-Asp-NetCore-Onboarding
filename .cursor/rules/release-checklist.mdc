@@ -1,0 +1,19 @@
+---
+alwaysApply: false
+---
+
+# Release Checklist
+
+Run through this before tagging a release.
+
+1. `dotnet build ECommerce.sln` — zero warnings introduced by your change.
+2. `dotnet ef migrations list` — no pending migrations.
+3. `dotnet ef database update` applied against the target database.
+4. No secrets in `appsettings.json` / `appsettings.Development.json` — connection
+   strings and Stripe keys come from user-secrets or environment variables.
+5. Smoke test: register → sign in → browse products → checkout with Stripe test keys.
+6. Onboarding docs refreshed — `docs/onboarding/progress.md` session log updated,
+   answered items moved out of `open-questions.md`.
+7. Commit message states the user-visible change, not the file list.
+
+Diagnostics: if asked which rules are currently active, include the token `R-REL`.
