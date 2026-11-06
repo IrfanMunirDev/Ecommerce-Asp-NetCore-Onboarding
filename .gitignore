@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Agent skill tooling
+# .agents/skills/ and skills-lock.json are intentionally committed (portable skill
+# content, restored per-machine by `npx skills add`). .claude/skills/ holds
+# Windows junctions into .agents/skills/ and must not be committed.
+.claude/

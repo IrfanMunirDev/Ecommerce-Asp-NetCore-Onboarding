@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "audit": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/audit/SKILL.md",
+      "computedHash": "429f55e27cb91ee3c091b9d7ec82ec8d944008a907eb344008c955d25983cd19"
+    },
+    "continue": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/continue/SKILL.md",
+      "computedHash": "f88b1c9af3e683ce3230f49c1b28541c3a39b3dd9aa336eea8cf30058df04963"
+    },
+    "learn": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/learn/SKILL.md",
+      "computedHash": "c2f51fbea5c6c1450b74ffbf0ed941b80e02d0ce291b2270fa38605dfaabdaa3"
+    },
+    "prepare-commits": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/prepare-commits/SKILL.md",
+      "computedHash": "ec95e5f717da5f346d45198649e1400a9d7875d2a393a43b43901300309176a7"
+    },
+    "qa-review": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/qa-review/SKILL.md",
+      "computedHash": "03ec746c314ff95b1de0a10fb5cb4993c80a2d0fc3e627a3184e8d443c9806fe"
+    },
+    "quick-ref": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/quick-ref/SKILL.md",
+      "computedHash": "98cdc16e49641eca62c0da492552fff51244d7ab351f90e3c27aaa2d2e0f116a"
+    },
+    "review": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/review/SKILL.md",
+      "computedHash": "f3ab8ea6982455d179b302d802532027b758641e573d8f8c0e8055729b559d5d"
+    },
+    "start": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/start/SKILL.md",
+      "computedHash": "213ccf18733786602790beae4ca83c2dd166715843b6dbb2f56c65e429de9527"
+    },
+    "ticket": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/ticket/SKILL.md",
+      "computedHash": "c73b63153a620d95adfe1d497f549a85c7bd49805e60dd75c993ddc7fd5a52ce"
+    },
+    "update-docs": {
+      "source": "smusman437/project-onboarding",
+      "sourceType": "github",
+      "skillPath": "skills/update-docs/SKILL.md",
+      "computedHash": "29a4a829f36fee7e6f7a517e746fbbc8dfba133600e7806e2726c50e3cf4d170"
+    }
+  }
+}

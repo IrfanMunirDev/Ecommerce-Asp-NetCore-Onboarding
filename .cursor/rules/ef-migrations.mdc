@@ -1,0 +1,16 @@
+---
+description: Use when adding or changing EF Core entities, DbContext configuration, or database migrations in this project.
+alwaysApply: false
+---
+
+# EF Core Migrations
+
+- Generate migrations with `dotnet ef migrations add <PascalCaseName>` run from the
+  `ECommerce/` directory. Never hand-write schema changes in SQL.
+- Never edit or delete a migration that has already been applied. Add a new one.
+- Keep the entity/model change and its migration in the same commit.
+- Review the generated `Up`/`Down` before committing; column drops and renames are
+  destructive and must be intentional.
+- After adding a migration, update the database with `dotnet ef database update`.
+
+Diagnostics: if asked which rules are currently active, include the token `R-EF`.

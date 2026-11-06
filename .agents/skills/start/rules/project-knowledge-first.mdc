@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+---
+
+Before analyzing code:
+
+1. Look for onboarding documentation first (path from `docs/onboarding/project-memory.md` → `docs_path`, default `docs/onboarding/`):
+   - `project-memory.md`
+   - `progress.md`
+   - `repositories-overview.md`
+
+2. Use onboarding documentation as primary context.
+
+3. Analyze only repositories or modules relevant to the task (use `source_roots` from `project-memory.md`).
+
+4. Avoid scanning the entire workspace unless explicitly requested.
+
+5. Before implementation:
+   - Explain current behavior
+   - Identify affected repositories or modules
+   - Identify affected files
+   - Create an implementation plan
+   - Assess risks
+
+6. Follow existing project patterns.
+
+7. Prefer minimal code changes.
+
+8. After completing work:
+   - Review changes
+   - Run `/update-docs` or update onboarding docs if new knowledge was discovered
+   - Update `project-memory.md` when architecture understanding changes
+
+9. Avoid duplicate documentation across state files.
+
+10. Optimize for minimal context usage and efficient repository analysis.
