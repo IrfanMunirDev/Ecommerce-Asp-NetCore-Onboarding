@@ -1,9 +1,27 @@
 image: mcr.microsoft.com/dotnet/sdk:8.0
 
-stages: [build]
+stages: [build, publish]
+
+variables:
+  NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+
+cache:
+  key: nuget
+  paths:
+    - .nuget/packages
 
 build:
   stage: build
   script:
     - dotnet restore
     - dotnet build --configuration Release --no-restore
+
+publish:
+  stage: publish
+  needs: [build]
+  script:
+    - dotnet publish ECommerce/ECommerce.csproj --configuration Release --output publish
+  artifacts:
+    paths:
+      - publish/
+    expire_in: 1 week
