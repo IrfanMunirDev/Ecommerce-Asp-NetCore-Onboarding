@@ -1,6 +1,6 @@
 image: mcr.microsoft.com/dotnet/sdk:8.0
 
-stages: [build, publish]
+stages: [build, publish, deploy]
 
 variables:
   NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
@@ -20,8 +20,23 @@ publish:
   stage: publish
   needs: [build]
   script:
-    - dotnet publish ECommerce/ECommerce.csproj --configuration Release --output publish
+    - dotnet publish ECommerce/ECommerce.csproj --configuration Release -r win-x86 --self-contained false -o publish
   artifacts:
     paths:
       - publish/
     expire_in: 1 week
+
+deploy:
+  stage: deploy
+  image: alpine:3.20
+  needs: [publish]
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+  script:
+    - apk add --no-cache lftp ca-certificates
+    - chmod +x deploy/monsterasp-deploy.sh
+    - sh deploy/monsterasp-deploy.sh
+  environment:
+    name: production
+    url: $SITE_URL
