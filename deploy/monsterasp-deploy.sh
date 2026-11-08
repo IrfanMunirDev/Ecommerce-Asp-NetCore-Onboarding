@@ -6,7 +6,7 @@ set -eu
 : "${FTP_USER:?FTP_USER required}"
 : "${FTP_PASSWORD:?FTP_PASSWORD required}"
 
-lftp -u "$FTP_USER","$FTP_PASSWORD" "sftp://$FTP_HOST:$FTP_PORT" <<LFTP
+if ! lftp -u "$FTP_USER","$FTP_PASSWORD" "sftp://$FTP_HOST:$FTP_PORT" <<LFTP
 set sftp:auto-confirm yes
 set net:max-retries 2
 set net:timeout 20
@@ -15,6 +15,10 @@ mirror -R --delete --parallel=2 --exclude app_offline.htm publish/ /wwwroot/
 rm -f /wwwroot/app_offline.htm
 bye
 LFTP
+then
+  echo "SFTP deploy failed" >&2
+  exit 1
+fi
 
 if [ -n "${SITE_URL:-}" ]; then
   i=0

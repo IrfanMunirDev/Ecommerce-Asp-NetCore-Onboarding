@@ -34,7 +34,7 @@ deploy:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: manual
   script:
-    - apk add --no-cache lftp ca-certificates
+    - apk add --no-cache lftp ca-certificates openssh-client
     - chmod +x deploy/monsterasp-deploy.sh
     - sh deploy/monsterasp-deploy.sh
   environment:
