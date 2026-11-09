@@ -466,7 +466,10 @@ git remote -v
 | `origin` | `github.com/IrfanMunirDev/Ecommerce-Asp-NetCore-Onboarding` | our GitHub fork: onboarding docs, agent setup |
 | `gitlab` | `gitlab.com/comp1-group4930245/ecommerce-aspnet-core` | **the CI/CD and deployment home** |
 
-Default branch on all three: `master`.
+The branch we work on everywhere is `master`. The GitLab project's **default branch
+setting** also needs to be `master`, because the deploy job's rule compares against
+`$CI_DEFAULT_BRANCH` — check *Settings → Repository → Default branch* if deploy never
+becomes available.
 
 The important consequence: **pushing to `origin` does not run a pipeline.** Only `gitlab`
 does. If you want GitHub and GitLab to match, push to both:
