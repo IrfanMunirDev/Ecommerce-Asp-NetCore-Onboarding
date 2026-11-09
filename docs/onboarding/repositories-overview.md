@@ -4,7 +4,7 @@
 
 | Slug | Name | Path | Stack | Status | Docs |
 |------|------|------|-------|--------|------|
-| ecommerce | ECommerce | ECommerce/ | C# / .NET 8, ASP.NET Core MVC, EF Core 8, SQL Server | not started | [overview](repos/ecommerce/overview.md) |
+| ecommerce | ECommerce | ECommerce/ | C# / .NET 8, ASP.NET Core MVC, EF Core 8, SQL Server | verified (Tiers 1–3, 5) | [overview](repos/ecommerce/overview.md) |
 
 ## Layout notes
 
@@ -15,3 +15,4 @@ Single-repo layout. `ECommerce.sln` at the root references exactly one project, 
 | Date | Action |
 |------|--------|
 | 2026-11-06 | Initial discovery via /start |
+| 2026-11-09 | False stack claims corrected; movie + cart flows traced; deployment documented in root README |

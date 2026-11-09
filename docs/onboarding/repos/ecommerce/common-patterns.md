@@ -15,9 +15,7 @@
 
 ## Testing patterns
 
-No test project is present in the solution. Verification is manual (`dotnet run`) for now.
-
-<!-- fill: add the intended test strategy if one exists outside this repo -->
+No test project is present in the solution. Verification is manual (`dotnet run` and a browser) for now, and the GitLab pipeline has no `test` stage. Adding `dotnet test` to CI is a prerequisite for gating merges on requirements — see the root README §10.
 
 ## Error & logging patterns
 
@@ -27,7 +25,8 @@ No test project is present in the solution. Verification is manual (`dotnet run`
 
 - `appsettings.json` — base config
 - `appsettings.Development.json` — local overrides
-- Secrets (DB connection string, Stripe keys) should **not** be committed; prefer `dotnet user-secrets` or environment variables. Verify current practice (Q-002).
+- The only secret is the DB connection string. `appsettings.json` ships it empty; development uses LocalDB with `Trusted_Connection=True`, and production supplies `ConnectionStrings__DefaultConnection` as a site environment variable on MonsterASP. Never commit a real connection string.
+- No Stripe keys exist — there is no payment integration (Q-002 resolved).
 
 ## Anti-patterns to avoid
 
